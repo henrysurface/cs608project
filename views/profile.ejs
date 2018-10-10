@@ -1,0 +1,57 @@
+<% include partials/header.ejs %>
+    <div class="container">
+        <% if (message != '') { %>
+            <p class="text-center text-danger"><%= message %></p>
+        <% } %>
+        <% if (user) { %>
+            <form class="add-project-form" action="" method="post" enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="first_name">First Name</label>
+                        <input type="text" class="form-control" name="first_name" id="first_name" value="<%= user.first_name %>" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="middle_name">Middle Name</label>
+                        <input type="text" class="form-control" name="middle_name" id="middle_name" value="<%= user.middle_name %>" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" class="form-control" name="last_name" id="last_name" value="<%= user.last_name %>" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" name="username" id="username" value="<%= user.username %>" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="location">Email</label>
+                        <input type="text" class="form-control" name="email" id="email" value="<%= user.email %>" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="password" id="password" value="<%= user.password %>" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <button type="submit" class="btn btn-primary float-right">Update Project</button>
+                    </div>
+                </div>
+            </form>
+        <% } else { %>
+        <p class="text-center">User Not Found. Go <a href="/signup">here</a> to add project.</p>
+    <% } %>
+    </div>
+</div>
+</body>
+</html>

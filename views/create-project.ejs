@@ -1,0 +1,71 @@
+<% include partials/header.ejs %>
+    <div class="container">
+        <% if (message != '') { %>
+            <p class="text-center text-danger"><%= message %></p>
+        <% } %>
+        <form class="add-project-form" action="" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" name="title" id="title" placeholder="Finish homework" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control" name="description" id="description" placeholder="wright 608 web page." required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="location">Location</label>
+                    <input type="text" class="form-control" name="location" id="location" placeholder="Home" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="priority">Priority</label>
+                    <select id="priority" name="priority" class="form-control" required>
+                        <option selected disabled>Choose priority</option>
+                        <option>low</option>
+                        <option>median</option>
+                        <option>high</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="start-at">Start At</label>
+                    <input type="datetime-local" class="form-control" name="start_at" id="start-at" placeholder="Start At" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="deadline">Deadline</label>
+                    <input type="datetime-local" class="form-control" name="deadline" id="deadline" placeholder="Deadline" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <legend>Completed</legend>
+                    <input type="radio" name="completed" id="c1" value="false"> <label for="c1">False</label>
+                    <input type="radio" name="completed" id="c2" value="true"> <label for="c2">True</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <legend>Fixed</legend>
+                    <input type="radio" name="fixed" id="f1" value="false"> <label for="c1">False</label>
+                    <input type="radio" name="fixed" id="f2" value="true"> <label for="c2">True</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                   <button type="submit" class="btn btn-primary float-right">Add Project</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
